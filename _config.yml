@@ -1,22 +1,22 @@
 ## You should change each of the following fields
 ## to customize your blog
 
-title: SQL Windown Functions - An Introduction
-description: "SQL Window Functions are powerful tools for performing complex calculations across rows of data, often used in data" 
+title: Welcome to my blog!
+description: "Welcome to my journey as I work towards becoming a professional data analyst and scientist. This blog is where I share my insights, challenges, and discoveries along the way. Let’s learn and grow together!" 
 author: Hongting (Ketherine) Wang
-author_description: "I am BYU student studying Statistics with an emphasis in Data Science and a minor in computer science."
+author_description: "I am Ketherine, an aspiring dat scientist with a passiong for uncovering insights from data. Currently pursuing my studies in Statistics with an emphasis in Data Science and a minor in Computer Science. I am enthusiastic about sharing what I learn---from SQL tips to data visualization techniques. Join me as I explore the fascinating world of data anlytics, one blog post at a time."
 
 url: https://ketherinewang.github.io ## change this to https://yourusername.github.io
 baseurl: /my-blog ## change this to the name of your blog repository
-header_image: /assets/img/headerimg.jpg ## change your header image if you want
+header_image: /assets/img/homepagebackground.webp ## change your header image if you want
 
 ## Add your social media user names.  Github is required, the rest are optional
 social:
     github: KetherineWang
     twitter: 
     facebook: 
-    email: 
-    linkedin: 
+    email: hongtingwang718@gmail.com
+    linkedin: www.linkedin.com/in/hongting-ketherine-wang
     youtube: 
     tumblr: 
     website: 
