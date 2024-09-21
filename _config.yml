@@ -4,7 +4,7 @@
 title: Welcome to my blog!
 description: "Welcome to my journey as I work towards becoming a professional data analyst and scientist. This blog is where I share my insights, challenges, and discoveries along the way. Let’s learn and grow together!" 
 author: Hongting (Ketherine) Wang
-author_description: "I am Ketherine, an aspiring dat scientist with a passiong for uncovering insights from data. Currently pursuing my studies in Statistics with an emphasis in Data Science and a minor in Computer Science. I am enthusiastic about sharing what I learn---from SQL tips to data visualization techniques. Join me as I explore the fascinating world of data anlytics, one blog post at a time."
+author_description: "I am Ketherine, an aspiring data scientist with a passion for uncovering insights from data. Currently pursuing my studies in Statistics with an emphasis in Data Science and a minor in Computer Science. I am enthusiastic about sharing what I learn---from SQL tips to data visualization techniques. Join me as I explore the fascinating world of data anlytics, one blog post at a time."
 
 url: https://ketherinewang.github.io ## change this to https://yourusername.github.io
 baseurl: /my-blog ## change this to the name of your blog repository
