@@ -4,7 +4,7 @@ title:  "SQL Window Functions - An Introduction"
 date: 2024-09-20
 description: Discover how SQL window functions can transform your data analysis by enabling powerful, row-wise calculations with ease.  
 image: "/assets/img/sqlwindowfunctions.webp"
-display_image: true
+display_image: false
 ---
 
 <style>
@@ -24,7 +24,7 @@ display_image: true
 }
 @keyframes typing {
     from { width: 0; }
-    to { width: 100%; }
+    to { width: 80%; }
 }
 </style>
 
