@@ -30,75 +30,75 @@ Before diving into examples, it’s important to understand why window functions
 # Key Components of Window Functions
 To fully understand how to use window functions, let's break down their structure:
 
-1. The Function Itself:
+## 1. The Function Itself: ##
 
-    Some common window functions include:
+Some common window functions include:
 
-    - `ROW_NUMBER()`: Assigns a unique sequential number to rows within a result set.
-    - `RANK()`: Assigns a rank to rows, with possible gaps if there are ties.
-    - `SUM()`, `AVG()`, `COUNT()`: Perform cumulative calculations over a window.
-2. The `OVER` Clause:
+- `ROW_NUMBER()`: Assigns a unique sequential number to rows within a result set.
+- `RANK()`: Assigns a rank to rows, with possible gaps if there are ties.
+- `SUM()`, `AVG()`, `COUNT()`: Perform cumulative calculations over a window.
+## 2. The `OVER` Clause: ##
 
-    The `OVER` clause is what defines the window or set of rows over which the function operates. 
-    You can partition your data using the `PARTITION BY` clause or order your data using the `ORDER BY` clause inside OVER.
+The `OVER` clause is what defines the window or set of rows over which the function operates. 
+You can partition your data using the `PARTITION BY` clause or order your data using the `ORDER BY` clause inside OVER.
 
-    For example:
-    ```
-    SUM(sales) OVER (PARTITION BY region ORDER BY date)
-    ```
-    This would calculate the running total of sales for each region.
+For example:
+```
+SUM(sales) OVER (PARTITION BY region ORDER BY date)
+```
+This would calculate the running total of sales for each region.
 
 # Common Window Functions in Action
 Let’s go over some examples to see window functions in practice.
 
-1. **ROW_NUMBER(): Creating Row Numbers**
+## 1. ROW_NUMBER(): Creating Row Numbers ##
 
-    The `ROW_NUMBER()` function is useful for assigning sequential numbers to rows in a table, which can help with pagination or eliminating duplicates.
+The `ROW_NUMBER()` function is useful for assigning sequential numbers to rows in a table, which can help with pagination or eliminating duplicates.
 
-    Example:
-    ```
-    SELECT employee_id, department, salary,
-        ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_num
-    FROM employees;
-    ```
-    This query assigns a row number to each employee in each department, ordering them by salary. Employees with the highest salary get `row_num = 1`.
+Example:
+```
+SELECT employee_id, department, salary,
+    ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_num
+FROM employees;
+```
+This query assigns a row number to each employee in each department, ordering them by salary. Employees with the highest salary get `row_num = 1`.
 
-2. **RANK(): Ranking Rows Based on Values**
+## 2. RANK(): Ranking Rows Based on Values ##
     
-    The `RANK()` function provides ranking within partitions, similar to `ROW_NUMBER()`, but it handles ties differently. 
-    If two rows have the same value, they will receive the same rank, and the next row will skip a rank number.
+The `RANK()` function provides ranking within partitions, similar to `ROW_NUMBER()`, but it handles ties differently. 
+If two rows have the same value, they will receive the same rank, and the next row will skip a rank number.
 
-    Example:
-    ```
-    SELECT employee_id, department, salary,
-        RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
-    FROM employees;
-    ```
-    This will assign a rank to employees within each department based on their salary, with possible gaps in ranks for ties.
+Example:
+```
+SELECT employee_id, department, salary,
+    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
+FROM employees;
+```
+This will assign a rank to employees within each department based on their salary, with possible gaps in ranks for ties.
 
-3. **Running Totals with SUM()**
+## 3. Running Totals with SUM() ##
 
-    You can calculate a running total using the SUM() function with the OVER clause. This is particularly useful in financial applications to track cumulative sales, expenses, etc.
+You can calculate a running total using the SUM() function with the OVER clause. This is particularly useful in financial applications to track cumulative sales, expenses, etc.
 
-    Example:
-    ```
-    SELECT order_id, customer_id, order_date, amount,
-        SUM(amount) OVER (ORDER BY order_date) AS running_total
-    FROM orders;
-    ```
-    This query computes a running total of order amounts, sorted by order_date.
+Example:
+```
+SELECT order_id, customer_id, order_date, amount,
+    SUM(amount) OVER (ORDER BY order_date) AS running_total
+FROM orders;
+```
+This query computes a running total of order amounts, sorted by order_date.
 
-4. **Moving Averages with AVG()**
+## 4. Moving Averages with AVG() ##
 
-    Moving averages help in smoothing data and identifying trends over time. Window functions make calculating moving averages simple.
+Moving averages help in smoothing data and identifying trends over time. Window functions make calculating moving averages simple.
 
-    Example:
-    ```
-    SELECT order_id, customer_id, order_date, amount,
-        AVG(amount) OVER (ORDER BY order_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS moving_avg
-    FROM orders;
-    ```
-    This calculates a 3-period moving average for order amounts, meaning it averages the current row's value with the previous two rows' values.
+Example:
+```
+SELECT order_id, customer_id, order_date, amount,
+    AVG(amount) OVER (ORDER BY order_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS moving_avg
+FROM orders;
+```
+This calculates a 3-period moving average for order amounts, meaning it averages the current row's value with the previous two rows' values.
 
 # Advanced Use Case: Combining Window Functions
 
@@ -118,5 +118,5 @@ They allow you to perform complex calculations in an efficient and readable way 
 Now that you’ve been introduced to some of the most common window functions, it's time to put your knowledge to the test! 
 Try running some window functions on a dataset you’ve worked with and see how they can help you uncover new insights.
 
-If you enjoyed this tutorial, check out my other posts on SQL techniques, and feel free to leave a comment or question below. 
+If you enjoyed this tutorial, check out my other data science posts, and feel free to leave a comment or question below. 
 Happy querying!
