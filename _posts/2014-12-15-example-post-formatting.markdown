@@ -56,15 +56,6 @@ Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus e
 | Header      | Title       |
 | Paragraph   | Text        |
 
-| order_id | salesperson | region | order_date | amount |
-| -------- | ----------- | ------ | ---------- | ------ |
-| 1        | John        | North  | 2023-01-01 | 200    |
-| 2        | John        | North  | 2023-01-02 | 200    |
-| 3        | John        | North  | 2023-01-03 | 150    |
-| 4        | Jane        | South  | 2023-01-01 | 300    |
-| 5        | Jane        | South  | 2023-01-03 | 300    |
-| 6        | Bob         | East   | 2023-01-02 | 400    |
-
 ## Code Snippet
 
 {%- highlight python -%}

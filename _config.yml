@@ -34,7 +34,6 @@ permalink: blog/:title/
 sass:
     style: compressed
 
-theme: minima
 markdown: kramdown
 highlighter: rouge
 plugins: [jekyll-paginate]
