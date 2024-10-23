@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Mastering SQL Window Functions: A Beginner's Guide"
 date: 2024-09-20
 description: Discover how SQL window functions can transform your data analysis by enabling powerful, row-wise calculations with ease.  
@@ -50,8 +50,9 @@ This would calculate the running total of sales for each region, ordered by date
 Let’s go over some examples to see window functions in practice.
 
 ## Example Dataset: `sales`
+
 | order_id | salesperson | region | order_date | amount |
-|----------|-------------|--------|------------|--------|
+| -------- | ----------- | ------ | ---------- | ------ |
 | 1        | John        | North  | 2023-01-01 | 200    |
 | 2        | John        | North  | 2023-01-02 | 200    |
 | 3        | John        | North  | 2023-01-03 | 150    |
@@ -71,6 +72,7 @@ FROM sales;
 ```
 
 **Output:**
+
 | order_id | salesperson | region | order_date | amount | row_num |
 |----------|-------------|--------|------------|--------|---------|
 | 1        | John        | North  | 2023-01-01 | 200    | 1       |
@@ -95,6 +97,7 @@ FROM sales;
 ```
 
 **Output:**
+
 | order_id | salesperson | region | order_date | amount | rank |
 |----------|-------------|--------|------------|--------|------|
 | 1        | John        | North  | 2023-01-01 | 200    | 1    |
@@ -118,6 +121,7 @@ FROM sales;
 ```
 
 **Output:**
+
 | order_id | salesperson | region | order_date | amount | running_total |
 |----------|-------------|--------|------------|--------|---------------|
 | 1        | John        | North  | 2023-01-01 | 200    | 200           |
@@ -140,6 +144,7 @@ FROM sales;
 ```
 
 **Output:**
+
 | order_id | salesperson | region | order_date | amount | moving_avg |
 |----------|-------------|--------|------------|--------|------------|
 | 1        | John        | North  | 2023-01-01 | 200    | 200.00     |
@@ -164,6 +169,7 @@ FROM sales;
 ```
 
 **Output:**
+
 | order_id | salesperson | region | order_date | amount | rank | running_total |
 |----------|-------------|--------|------------|--------|------|---------------|
 | 1        | John        | North  | 2023-01-01 | 200    | 1    | 200           |
