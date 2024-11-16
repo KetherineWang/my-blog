@@ -49,7 +49,7 @@ What are the defining features of highly-rated movies, and do factors such as ge
     The following bar chart shows the distribution of the IMDb Top 250 movies by decade. The majority of the top-rated movies were released between 1980 and 2020.
 
 <figure>
-	<img src="/assets/img/Distribution of IMDb Top 250 Movies by Decade.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Distribution of IMDb Top 250 Movies by Decade.png" alt=""> 
 	<figcaption>Distribution of IMDb Top 250 Movies by Decade</figcaption>
 </figure>
 
@@ -58,7 +58,7 @@ What are the defining features of highly-rated movies, and do factors such as ge
     Analyzing the average IMDb, Rotten Tomatoes, and Metacritic ratings by decade revealed interesting trends. Older movies often had higher Rotten Tomatoes scores, while IMDb ratings remained relatively stable.
 
 <figure>
-	<img src="/assets/img/Average Rating by Decade.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Average Rating by Decade.png" alt=""> 
 	<figcaption>Average Rating by Decade</figcaption>
 </figure>
 
@@ -67,7 +67,7 @@ What are the defining features of highly-rated movies, and do factors such as ge
     Drama emerged as the most frequent genre among the IMDb Top 250 movies, followed by Adventure and Action.
 
 <figure>
-	<img src="/assets/img/Most Common Genres in IMDb Top 250 Movies.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Most Common Genres in IMDb Top 250 Movies.png" alt=""> 
 	<figcaption>Most Common Genres in IMDb Top 250 Movies</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ What are the defining features of highly-rated movies, and do factors such as ge
     Western, Music, and Crime genres lead in average IMDb ratings among the top 10 genres.
 
 <figure>
-	<img src="/assets/img/Top 10 Genres by Average IMDb Rating.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Top 10 Genres by Average IMDb Rating.png" alt=""> 
 	<figcaption>Top 10 Genres by Average IMDb Rating</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ What are the defining features of highly-rated movies, and do factors such as ge
     Action, Adventure, and Fantasy dominate box office revenues among the top 10 genres.
 
 <figure>
-	<img src="/assets/img/Top 10 Genres by Average Box Office.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Top 10 Genres by Average Box Office.png" alt=""> 
 	<figcaption>Top 10 Genres by Average Box Office</figcaption>
 </figure>
 
@@ -96,13 +96,13 @@ What are the defining features of highly-rated movies, and do factors such as ge
     - IMDb ratings have little correlation with box office earnings.
 
 <figure>
-	<img src="/assets/img/Correlation Analysis Between Numeric Variables.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Correlation Analysis Between Numeric Variables.png" alt=""> 
 	<figcaption>Correlation Analysis Between Numeric Variables</figcaption>
 </figure>
 
 7. **Average Rating by Decade**
 <figure>
-	<img src="/assets/img/Average Rating by Decade.png" alt=""> 
+	<img src="{{site.url}}/{{site.baseurl}}/assets/img/Average Rating by Decade.png" alt=""> 
 	<figcaption>Average Rating by Decade</figcaption>
 </figure>
 
