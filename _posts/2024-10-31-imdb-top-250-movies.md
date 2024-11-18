@@ -33,10 +33,10 @@ What are the defining features of highly-rated movies, and do factors such as ge
 
 To assemble the IMDb Top 250 Movies dataset, I used a combination of web scraping and an API integration.
 
-1. **Web Scraping IMDb Top 250 Movie Titles:**
+**1. Web Scraping IMDb Top 250 Movie Titles:**
 
-    - **Selenium:** A Chrome WebDriver was used to open the IMDb Top 250 Movies page to automate a browser session and retrieve the page's dynamically loaded HTML content.
-    - **BeautifulSoup:** Using BeautifulSoup, I parsed the HTML to extract the movie titles. Each title was located inside specific HTML elements with the relevant class names.
+- **Selenium:** A Chrome WebDriver was used to open the IMDb Top 250 Movies page to automate a browser session and retrieve the page's dynamically loaded HTML content.
+- **BeautifulSoup:** Using BeautifulSoup, I parsed the HTML to extract the movie titles. Each title was located inside specific HTML elements with the relevant class names.
 
 ```python
 # Set up Chrome WebDriver and retrieve HTML content
@@ -65,13 +65,13 @@ for imdb_item in imdb_items:
 cleaned_movie_titles = [movie_title.split('. ', 1)[1] for movie_title in movie_titles]
 ```
 
-2. **Fetching Movie Details with the OMDB API:**
+**2. Fetching Movie Details with the OMDB API:**
 
-    After gathering the cleaned list of movie titles, I used the OMDB API to fetch additional movie details such as the release year, genres, awards, ratings including IMDb rating, Rotten Tomatoes Tomatometer, and Metacritic Metascore, and box office.
+After gathering the cleaned list of movie titles, I used the OMDB API to fetch additional movie details such as the release year, genres, awards, ratings including IMDb rating, Rotten Tomatoes Tomatometer, and Metacritic Metascore, and box office.
 
-    - **API Key:** Generate an API key by visiting this [link](https://www.omdbapi.com/apikey.aspx). Sotre the API key securely, and include it as a query parater in the API requests.
-    - **Request Structure:** For each movie title, an HTTP GET request was sent to the OMDB API with the title as a query parameter.
-    - **Rate Limiting:** To comply with ethical scraping practices and API usage policies, I introduced a `time.sleep(2)` delay between each request to avoid overwhelming the API server.
+- **API Key:** Generate an API key by visiting this [link](https://www.omdbapi.com/apikey.aspx). Sotre the API key securely, and include it as a query parater in the API requests.
+- **Request Structure:** For each movie title, an HTTP GET request was sent to the OMDB API with the title as a query parameter.
+- **Rate Limiting:** To comply with ethical scraping practices and API usage policies, I introduced a `time.sleep(2)` delay between each request to avoid overwhelming the API server.
 
 ```python
 # Example Usage: http://www.omdbapi.com/?apikey=YOURAPIKEYHERE&t=MOVIETITLEHERE&type=movie&plot=full
@@ -123,81 +123,79 @@ for cleaned_movie_title in cleaned_movie_titles:
     - **Total Wins:** The average number of wins is 44, with some movies winning up to 349 awards, reflecting varying degrees of recognition.
     - **Total Nominations:** On average, movies have 57 nominations, with some achieving as many as 359.
 
-
 # Exploratory Data Analysis (EDA)
 
-1. **Distribution of Movies by Decade**
+**1. Distribution of Movies by Decade**
 
-    The distribution of movies across decades, as shown in the bar chart, reveals a significant increase in the number of IMDb Top 250 Movies from the 1980s onwards. This suggests a bias towards more contemporary films, likely due to better data preservation, shifting audience preferences, or wider global reach.
+The distribution of movies across decades, as shown in the bar chart, reveals a significant increase in the number of IMDb Top 250 Movies from the 1980s onwards. This suggests a bias towards more contemporary films, likely due to better data preservation, shifting audience preferences, or wider global reach.
 
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Distribution of IMDb Top 250 Movies by Decade.png" alt=""> 
-        <figcaption>Distribution of IMDb Top 250 Movies by Decade</figcaption>
-    </figure>
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Distribution of IMDb Top 250 Movies by Decade.png" alt=""> 
+    <figcaption>Distribution of IMDb Top 250 Movies by Decade</figcaption>
+</figure>
 
-2. **Average Ratings by Decade**
+**2. Average Ratings by Decade**
 
-    The line chart compars IMDb, Rotten Tomatoes, and Metacritic ratings by decade. IMDb ratings remain relatively stable over time, suggesting a general consistency in viewer evaluation across decades. Rotten Tomatoes Tomatometers and Metacritic Metascores show a decline from earlier decades, possibly reflecting stricter critical standards or differing audience expectations over time.
+The line chart compars IMDb, Rotten Tomatoes, and Metacritic ratings by decade. IMDb ratings remain relatively stable over time, suggesting a general consistency in viewer evaluation across decades. Rotten Tomatoes Tomatometers and Metacritic Metascores show a decline from earlier decades, possibly reflecting stricter critical standards or differing audience expectations over time.
 
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Average Ratings by Decade.png" alt=""> 
-        <figcaption>Average Rating by Decade</figcaption>
-    </figure>
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Average Ratings by Decade.png" alt=""> 
+    <figcaption>Average Ratings by Decade</figcaption>
+</figure>
 
-3. **Genre Analysis**
+**3. Genre Analysis**
 
-    The "Most Common Genres" chart demonstrates that drama dominates the IMDb Top 250 Movies list, followed by adventure, action, and crime. These genres align with widespread audience preferences for emotionally engaging or thrilling narratives. By contrast, niche genres like musical or film noir are less represented, indicating they may appeal to smaller, specific audiences.
+The "Most Common Genres" chart demonstrates that drama dominates the IMDb Top 250 Movies list, followed by adventure, action, and crime. These genres align with widespread audience preferences for emotionally engaging or thrilling narratives. By contrast, niche genres like musical or film noir are less represented, indicating they may appeal to smaller, specific audiences.
 
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Most Common Genres in IMDb Top 250 Movies.png" alt=""> 
-        <figcaption>Most Common Genres in IMDb Top 250 Movies</figcaption>
-    </figure>
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Most Common Genres in IMDb Top 250 Movies.png" alt=""> 
+    <figcaption>Most Common Genres in IMDb Top 250 Movies</figcaption>
+</figure>
 
-    The "Top 10 Genres by Average IMDb Rating" reveals that genres such as western, music, and crime achieve the highest average IMDb ratings. This suggests that while some genres dominate by volume, others might stand out in terms of audience appreciation, highlighting a distinction between popularity and critical acclaim.
+The "Top 10 Genres by Average IMDb Rating" reveals that genres such as western, music, and crime achieve the highest average IMDb ratings. This suggests that while some genres dominate by volume, others might stand out in terms of audience appreciation, highlighting a distinction between popularity and critical acclaim.
 
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Top 10 Genres by Average IMDb Rating.png" alt=""> 
-        <figcaption>Top 10 Genres by Average IMDb Rating</figcaption>
-    </figure>
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Top 10 Genres by Average IMDb Rating.png" alt=""> 
+    <figcaption>Top 10 Genres by Average IMDb Rating</figcaption>
+</figure>
 
-4. **Box Office Analysis**
+**4. Box Office Analysis**
 
-    The "Top 10 Genres by Average Box Office" chart shows that adventure, fantasy, and action lead in terms of box office revenue, underscoring their mass-market appeal. However, these genres do not necessarily dominate the IMDb rating averages, suggesting that box office performance is not a reliable indicator of critical success.
+The "Top 10 Genres by Average Box Office" chart shows that adventure, fantasy, and action lead in terms of box office revenue, underscoring their mass-market appeal. However, these genres do not necessarily dominate the IMDb rating averages, suggesting that box office performance is not a reliable indicator of critical success.
 
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Top 10 Genres by Average Box Office.png" alt=""> 
-        <figcaption>Top 10 Genres by Average Box Office</figcaption>
-    </figure>
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Top 10 Genres by Average Box Office.png" alt=""> 
+    <figcaption>Top 10 Genres by Average Box Office</figcaption>
+</figure>
 
-    The scatterplots for "Box Office vs. IMDb Rating" and other rating comparisons confirm this trend that a higher box office does not guarantee a higher IMDb rating.
+The scatterplots for "Box Office vs. IMDb Rating" and other rating comparisons confirm this trend that a higher box office does not guarantee a higher IMDb rating.
+
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Box Office vs. IMDb Rating.png" alt=""> 
+    <figcaption>Box Office vs. IMDb Rating</figcaption>
+</figure>
+
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Box Office vs. Rotten Tomatoes Tomatometer.png" alt=""> 
+    <figcaption>Box Office vs. Rotten Tomatoes Tomatometer</figcaption>
+</figure>
+
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Box Office vs. Metacritic Metascore.png" alt=""> 
+    <figcaption>Box Office vs. Metacritic Metascore</figcaption>
+</figure>
+
+**6. Correlation Analysis**
     
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Box Office vs. IMDb Rating.png" alt=""> 
-        <figcaption>Box Office vs. IMDb Rating</figcaption>
-    </figure>
-
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Box Office vs. Rotten Tomatoes Tomatometer.png" alt=""> 
-        <figcaption>Box Office vs. Rotten Tomatoes Tomatometer</figcaption>
-    </figure>
-
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Box Office vs. Metacritic Metascore.png" alt=""> 
-        <figcaption>Box Office vs. Metacritic Metascore</figcaption>
-    </figure>
-
-6. **Correlation Analysis**
-    
-    The heatmap of crrelations between numerical variables provide additional context:
-
+The heatmap of crrelations between numerical variables provide additional context:
 - There is a weak positive relationship between total wins and IMDb ratings, as well as total nominations and IMDb ratings. This suggests that while winning or being nominated for awards can slightly enhance a film's reputation among viewers, these features are not the sole determinants of a high IMDb rating. 
 - A moderate positive correlation exists between Rotten Tomatoes Tomatometers and Metacritic Metascores, indicating that these movie platforms and databases might share some alignment in evaluating films.
 - There is a weak positive correlation between box office and IMDb ratings, which further verifies that box office plays a minor role in determining a movie's IMDb rating.
 
-    <figure>
-        <img src="{{site.url}}/{{site.baseurl}}/assets/img/Correlation Analysis Between Numerical Variables.png" alt=""> 
-        <figcaption>Correlation Analysis Between Numerical Variables</figcaption>
-    </figure>
+<figure>
+    <img src="{{site.url}}/{{site.baseurl}}/assets/img/Correlation Analysis Between Numerical Variables.png" alt=""> 
+    <figcaption>Correlation Analysis Between Numerical Variables</figcaption>
+</figure>
 
 # Insights and Conclusions
 
