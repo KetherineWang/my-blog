@@ -35,8 +35,8 @@ To assemble the IMDb Top 250 Movies dataset, I used a combination of web scrapin
 
 1. **Web Scraping IMDb Top 250 Movie Titles:**
 
-- **Selenium:** A Chrome WebDriver was used to open the IMDb Top 250 Movies page to automate a browser session and retrieve the page's dynamically loaded HTML content.
-- **BeautifulSoup:** Using BeautifulSoup, I parsed the HTML to extract the movie titles. Each title was located inside specific HTML elements with the relevant class names.
+    - **Selenium:** A Chrome WebDriver was used to open the IMDb Top 250 Movies page to automate a browser session and retrieve the page's dynamically loaded HTML content.
+    - **BeautifulSoup:** Using BeautifulSoup, I parsed the HTML to extract the movie titles. Each title was located inside specific HTML elements with the relevant class names.
 
 ```python
 # Set up Chrome WebDriver and retrieve HTML content
@@ -69,9 +69,9 @@ cleaned_movie_titles = [movie_title.split('. ', 1)[1] for movie_title in movie_t
 
     After gathering the cleaned list of movie titles, I used the OMDB API to fetch additional movie details such as the release year, genres, awards, ratings including IMDb rating, Rotten Tomatoes Tomatometer, and Metacritic Metascore, and box office.
 
-- **API Key:** Generate an API key by visiting this [link](https://www.omdbapi.com/apikey.aspx). Sotre the API key securely, and include it as a query parater in the API requests.
-- **Request Structure:** For each movie title, an HTTP GET request was sent to the OMDB API with the title as a query parameter.
-- **Rate Limiting:** To comply with ethical scraping practices and API usage policies, I introduced a `time.sleep(2)` delay between each request to avoid overwhelming the API server.
+    - **API Key:** Generate an API key by visiting this [link](https://www.omdbapi.com/apikey.aspx). Sotre the API key securely, and include it as a query parater in the API requests.
+    - **Request Structure:** For each movie title, an HTTP GET request was sent to the OMDB API with the title as a query parameter.
+    - **Rate Limiting:** To comply with ethical scraping practices and API usage policies, I introduced a `time.sleep(2)` delay between each request to avoid overwhelming the API server.
 
 ```python
 # Example Usage: http://www.omdbapi.com/?apikey=YOURAPIKEYHERE&t=MOVIETITLEHERE&type=movie&plot=full
@@ -189,9 +189,10 @@ for cleaned_movie_title in cleaned_movie_titles:
 6. **Correlation Analysis**
     
     The heatmap of crrelations between numerical variables provide additional context:
-    - There is a weak positive relationship between total wins and IMDb ratings, as well as total nominations and IMDb ratings. This suggests that while winning or being nominated for awards can slightly enhance a film's reputation among viewers, these features are not the sole determinants of a high IMDb rating. 
-    - A moderate positive correlation exists between Rotten Tomatoes Tomatometers and Metacritic Metascores, indicating that these movie platforms and databases might share some alignment in evaluating films.
-    - There is a weak positive correlation between box office and IMDb ratings, which further verifies that box office plays a minor role in determining a movie's IMDb rating.
+
+- There is a weak positive relationship between total wins and IMDb ratings, as well as total nominations and IMDb ratings. This suggests that while winning or being nominated for awards can slightly enhance a film's reputation among viewers, these features are not the sole determinants of a high IMDb rating. 
+- A moderate positive correlation exists between Rotten Tomatoes Tomatometers and Metacritic Metascores, indicating that these movie platforms and databases might share some alignment in evaluating films.
+- There is a weak positive correlation between box office and IMDb ratings, which further verifies that box office plays a minor role in determining a movie's IMDb rating.
 
     <figure>
         <img src="{{site.url}}/{{site.baseurl}}/assets/img/Correlation Analysis Between Numerical Variables.png" alt=""> 
