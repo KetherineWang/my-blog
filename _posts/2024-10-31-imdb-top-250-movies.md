@@ -200,7 +200,7 @@ The heatmap of crrelations between numerical variables provide additional contex
 # Insights and Conclusions
 
 ## Key Findings
-This analysis demonstrates that highly-rated movies share specific traits, such as excelling within certain genres (e.g., drama, crime, and western) and maintaining consistent ratings across decades. However, box office and awards are not always directly tied to high ratings, emphasizing the complexity of what makes a film highly-rated. Audience perception could be influenced by a blend of qualitative and quantitative factors Together, these insights address the question of defining features for top-rated movies and reveal nuanced relationships between genres, awards, ratings, and box office.
+This analysis demonstrates that highly-rated movies share specific traits, such as excelling within certain genres (e.g., drama, crime, and western) and maintaining consistent ratings across decades. However, box office and awards are not always directly tied to high ratings, emphasizing the complexity of what makes a film highly-rated. Audience perception could be influenced by a blend of qualitative and quantitative factors. Together, these insights address the question of defining features for top-rated movies and reveal nuanced relationships between genres, awards, ratings, and box office.
 
 ## GitHub Repository
 Find the full code, dataset, and visulization [here](https://github.com/KetherineWang/post-2-data-curation.git).
