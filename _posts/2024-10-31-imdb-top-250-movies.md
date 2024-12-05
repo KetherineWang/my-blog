@@ -10,7 +10,7 @@ display_image: false
 
 Have you ever wondered what defines a great movie? Are highly-rated films characterized by their genre, awards, ratings, or box office? In this blog post, we dive into the IMDb Top 250 Movies to explore their defining features through data curation, web scraping, application programming interface (API), and exploratory data analysis (EDA).
 
-Using a combination of Python, the IMDb website, and the OMDB API, we created an original dataset and performed analyses to uncover trends and insights about these cinematic masterpieces.
+Using a combination of Python, the IMDb website, and the OMDB API, I created an original dataset and performed analyses to uncover trends and insights about these cinematic masterpieces.
 
 # Question of Interest
 
